@@ -1,0 +1,50 @@
+
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 29
+    defaultConfig {
+        applicationId "com.davdev.twa"
+        minSdkVersion 19
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+       // Change Here
+        manifestPlaceholders = [
+                hostName       : "pwatwaapp.firebaseapp.com",
+                defaultUrl     : "https://pwatwaapp.firebaseapp.com/",
+                launcherName   : "TWA",
+                assetStatements: '[{\n' +
+                        '  "relation": ["delegate_permission/common.handle_all_urls"],\n' +
+                        '  "target": {\n' +
+                        '    "namespace": "android_app",\n' +
+                        '    "package_name": "com.davdev.twa",\n' +
+                        '    "sha256_cert_fingerprints":\n' +
+                        '    ["AC:2F:C8:F8:2B:15:6A:E5:FE:66:97:A8:90:6F:D4:8B:29:E2:5C:19:08:D5:36:24:2A:6A:D3:63:12:DB:55:BC"]\n' +
+                        '  }\n' +
+                        '}]'
+        ]
+
+        // This attribute sets the status bar color for the TWA. It can be either set here or in
+        // `res/values/colors.xml`. Setting in both places is an error and the app will not
+        // compile. If not set, the status bar color defaults to #FFFFFF - white.
+        resValue "color", "colorPrimary", "#4b0082" // Change Here
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+        }
+    }
+    // Add this
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    // Add this
+    implementation 'com.github.GoogleChrome.custom-tabs-client:customtabs:4097235' // Show splash screen only after enter animation completes
+}

@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">TWA</string>
+
+   <!-- Chane URL -->
+    <string
+    name="asset_statements">[{ \"include\": \"https://pwatwaapp.firebaseapp.com/.well-known/assetlinks.json\" }]</string>
+</resources>
