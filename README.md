@@ -14,4 +14,7 @@ Open the app in Android Studio click the play button.
 
 Source repo: https://github.com/....
 # twa
+<<<<<<< HEAD
 # twa
+=======
+>>>>>>> origin/master
