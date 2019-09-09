@@ -1,0 +1,9 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "com.davdev.twa",
+    "sha256_cert_fingerprints":
+    ["AC:2F:C8:F8:2B:15:6A:E5:FE:66:97:A8:90:6F:D4:8B:29:E2:5C:19:08:D5:36:24:2A:6A:D3:63:12:DB:55:BC"]
+  }
+}]
